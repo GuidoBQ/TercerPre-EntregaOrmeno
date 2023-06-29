@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'AppProyecto/css/guidostyle.css' %}" rel="stylesheet"/>
+    <link href="{% static 'AppProyecto/css/bootstrap.min.css' %}" rel="stylesheet"/>
+
+    <script src="{% static 'AppProyecto/js/bootstrap.min.js'%}"></script>
+
+    <title>Perros</title>
+
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">ANIMALITOS</span>
+        </div>
+      </nav>
+      <p>Seleccione una opcion (una vez elegida el boton se vuelve obsoleto)</p>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <a type="button" class="btn btn-primary" href="{% url 'SetPerros' %}">Registrar Perro</a>
+        <a type="button" class="btn btn-primary" href="{% url 'GetPerros' %}">Buscar Perro</a>
+      </div>
+      <!--div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown link
+        </a>
+      
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="{% url 'SetPerros' %}">Registrar Perro</a></li>
+          <li><a class="dropdown-item" href="{% url 'GetPerros' %}">Buscar Perro</a></li>
+        </ul>
+      </div-->
+      {% block contenidoQueCambia %}
+    {% endblock %}
+</body>

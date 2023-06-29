@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'AppProyecto/css/guidostyle.css' %}" rel="stylesheet"/>
+    <link href="{% static 'AppProyecto/css/bootstrap.min.css' %}" rel="stylesheet"/>
+
+    <script src="{% static 'AppProyecto/js/bootstrap.min.js'%}"></script>
+
+    <title>Inicio|AppProyecto</title>
+
+</head>
+
+<body>
+    <!-- As a heading -->
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">ANIMALITOS</span>
+    </div>
+  </nav>
+
+    <div class="card-group">
+        <div class="card">
+            <img src="https://t1.uc.ltmcdn.com/es/posts/5/1/6/como_saber_si_mi_perro_sera_grande_43615_600_square.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"style="font-size: larger">Perritos U・ᴥ・U</h5>
+                <p class="card-text" style="font-size: large">Presiona aca para registrar y buscar perritos.</p>
+                <div class="d-grid gap-2">
+                    <a class="btn btn-primary" role="button" href="{% url 'Perros' %}">Guau!</a>
+                  </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://img.europapress.es/fotoweb/fotonoticia_20160504175621-16051692649_600.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="font-size: larger;">Gatitos ଲ(ⓛ ω ⓛ)ଲ</h5>
+                <p class="card-text" style="font-size: large;">Presiona aca para registrar y buscar gatitos.</p>
+                <div class="d-grid gap-2">
+                    <a class="btn btn-success" role="button" href="{% url 'Gatos' %}">Miau!</a>
+                  </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://t2.ea.ltmcdn.com/es/posts/3/0/6/clases_de_caballos_20603_600.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"style="font-size: larger">Caballitos (◕(‘人‘) ◕)</h5>
+                <p class="card-text"style="font-size: large">Presiona aca para registrar y buscar caballitos.</p>
+                <div class="d-grid gap-2">
+                    <a class="btn btn-danger" role="button" href="{% url 'Caballos' %}">Neigh?</a>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>☆⌒(≧▽​° )</strong> Cierra esta notificacion si odias a los animalitos
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{% extends "AppProyecto/perros.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<p>Consultar Perro</p>
+    <form action="/appproyecto/buscarPerros/"> method="GET">
+        <input type="text" name="nombre" id="nombre">
+        <input type="submit" value="Buscar">
+
+    </form>
+    {%if perros%}
+        {%for perro in perros%}
+            <li>{{perro.nombre}}</li>
+            <li>{{perro.edad}}</li>
+            <li>{{perro.raza}}</li>
+        {%endfor%}
+        {%endif%}  
+{% endblock %}
