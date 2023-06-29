@@ -40,7 +40,55 @@ def buscarPerros(request):
         respuesta = "No se enviaron datos"
     return HttpResponse(respuesta)
 
+def setGatos(request):
+    if request.method == 'POST':
+        miFormulario = formSetGatos(request.POST)
+        print(miFormulario)
+        if miFormulario.is_valid:
+            data = miFormulario.cleaned_data
+            gato = Gato(nombre=data["nombre"],edad=data["edad"], color = data["color"])
+            gato.save()
+            return render(request, "AppProyecto/inicio.html")
+    else:
+        miFormulario = formSetGatos()
+        return render(request, "AppProyecto/setGatos.html", {"miFormulario":miFormulario})
 
+def getGatos(request):
+    return render (request, "AppProyecto/getGatos.html")
+
+def buscarGatos(request):
+    if request.GET["nombre"]:
+        nombre= request.GET["nombre"]
+        gatos = Gato.objects.filter(nombre= nombre)
+        return render(request, "AppProyecto/getGatos.html", {"gatos":gatos})
+    else:
+        respuesta = "No se enviaron datos"
+    return HttpResponse(respuesta)
+
+def setCaballos(request):
+    if request.method == 'POST':
+        miFormulario = formSetCaballos(request.POST)
+        print(miFormulario)
+        if miFormulario.is_valid:
+            data = miFormulario.cleaned_data
+            caballo = Caballo(nombre=data["nombre"],edad=data["edad"], peso = data["peso"],velocidad = data["velocidad"])
+            caballo.save()
+            return render(request, "AppProyecto/inicio.html")
+    else:
+        miFormulario = formSetCaballos()
+        return render(request, "AppProyecto/setCaballos.html", {"miFormulario":miFormulario})
+
+def getCaballos(request):
+    return render (request, "AppProyecto/getCaballos.html")
+
+def buscarCaballos(request):
+    if request.GET["nombre"]:
+        nombre= request.GET["nombre"]
+        caballos = Caballo.objects.filter(nombre= nombre)
+        return render(request, "AppProyecto/getCaballos.html", {"caballos":caballos})
+    else:
+        respuesta = "No se enviaron datos"
+    return HttpResponse(respuesta)
 
 # Create your views here.
 

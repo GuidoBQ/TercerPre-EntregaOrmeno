@@ -5,12 +5,12 @@ class formSetPerros(forms.Form):
     edad = forms.IntegerField()
     raza = forms.CharField(max_length=30)
 
-class formSetGato(forms.Form):
+class formSetGatos(forms.Form):
     nombre = forms.CharField(max_length=20)
     edad = forms.IntegerField()
     color = forms.CharField(max_length=30)
 
-class formSetCaballo(forms.Form):
+class formSetCaballos(forms.Form):
     nombre = forms.CharField(max_length=20)
     edad = forms.IntegerField()
     peso = forms.IntegerField()

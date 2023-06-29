@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'AppProyecto/css/guidostyle.css' %}" rel="stylesheet"/>
+    <link href="{% static 'AppProyecto/css/bootstrap.min.css' %}" rel="stylesheet"/>
+
+    <script src="{% static 'AppProyecto/js/bootstrap.min.js'%}"></script>
+
+    <title>Caballos</title>
+
+</head>
+<body>
+  <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">ANIMALITOS</span>
+      </div>
+    </nav>
+    <p>Seleccione una opcion</p>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <a type="button" class="btn btn-primary" href="{% url 'SetCaballos' %}">Registrar Caballo</a>
+      <a type="button" class="btn btn-primary" href="{% url 'GetCaballos' %}">Buscar Caballo</a>
+    </div>
+  {% block contenidoQueCambia %}
+  {% endblock %}

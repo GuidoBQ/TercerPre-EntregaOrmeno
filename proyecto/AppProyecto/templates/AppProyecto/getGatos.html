@@ -1,0 +1,17 @@
+{% extends "AppProyecto/gatos.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<p>Consultar Gato</p>
+    <form action="/appproyecto/buscarGatos/"> method="GET">
+        <input type="text" name="nombre" id="nombre">
+        <input type="submit" value="Buscar">
+
+    </form>
+    {%if gatos%}
+        {%for gato in gatos%}
+            <li>{{gato.nombre}}</li>
+            <li>{{gato.edad}}</li>
+            <li>{{gato.color}}</li>
+        {%endfor%}
+        {%endif%}  
+{% endblock %}
